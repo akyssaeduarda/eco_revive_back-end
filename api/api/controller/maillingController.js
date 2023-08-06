@@ -2,7 +2,6 @@ const nodemailer = require("nodemailer");
 
 module.exports = class MailController {
   static async sendMail(request, response) {
-    console.log(request.body);
     const { name, email, subject, message } = request.body;
 
     // Verifica se os campos estão preenchidos
@@ -28,7 +27,7 @@ module.exports = class MailController {
       to: "ecoreviverecife@gmail.com",
       subject: subject,
       text: message,
-      html: "<b>Hey there! It works!</b>", // html body
+      html: `<div><h1>Nome: ${name}</h1><h2>Email: ${email}</h2><p>${message}</p></div>`
     };
 
     // Envia o email
