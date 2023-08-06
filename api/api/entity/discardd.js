@@ -1,4 +1,4 @@
-const {DataTypes} = require("sequelize");
+const { DataTypes } = require("sequelize");
 const db = require("../db");
 
 const Discardd = db.define("discardd", {
@@ -8,7 +8,7 @@ const Discardd = db.define("discardd", {
     allowNull: false,
     primaryKey: true,
   },
-  disc_item : {
+  disc_item: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -33,13 +33,13 @@ const Discardd = db.define("discardd", {
   createdAt: {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW,
-    allowNull: false
+    allowNull: false,
   },
   updatedAt: {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW,
-    allowNull: false
-  }
+    allowNull: false,
+  },
 });
 
 Discardd.sync();
