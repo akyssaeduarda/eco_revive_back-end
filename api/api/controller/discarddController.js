@@ -1,5 +1,4 @@
 const db = require("../db");
-const encrypt = require("../utils/encript");
 const Discardd = require('../entity/discardd')
 const jwt = require("jsonwebtoken")
 
@@ -22,7 +21,7 @@ module.exports = class discarddController {
           return response.status(401).send({ message: "Unauthorized. Please log in." });
         }
       await Discardd.create({
-        disc_item, disc_address, disc_date, disc_responsible_name, disc_status, id_user: userId /*id_user - como relacionar essa tabela com a de usuario */
+        disc_item, disc_address, disc_date, disc_responsible_name, disc_status, id_user: userId 
       })
       return response.status(201).json({ message:"SUCESSO!!" })
     } catch (error) {
@@ -33,8 +32,3 @@ module.exports = class discarddController {
 
 };
 
-/*  
-  ESTUDAR COMO BOTAR A HR DA INCLUSÃO E ALTERAÇÃO
-    date_hours_inclusion datetime, 
-    date_hours_alteration
-*/

@@ -1,4 +1,4 @@
-const {DataTypes} = require("sequelize");
+const { DataTypes } = require("sequelize");
 const db = require("../db");
 
 const Company = db.define("company", {
@@ -59,15 +59,14 @@ const Company = db.define("company", {
   createdAt: {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW,
-    allowNull: false
+    allowNull: false,
   },
   updatedAt: {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW,
-    allowNull: false
-  }
+    allowNull: false,
+  },
 });
 
 Company.sync();
 module.exports = Company;
-

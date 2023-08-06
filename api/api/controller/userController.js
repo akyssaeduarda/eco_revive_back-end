@@ -1,5 +1,4 @@
 const db = require("../db");
-const encrypt = require("../utils/encript");
 const User = require('../entity/user')
 
 module.exports = class userController {
