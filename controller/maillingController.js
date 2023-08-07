@@ -37,12 +37,7 @@ module.exports = class MailController {
         console.log(info)
         return response.status(500).json({ message: "Erro ao enviar email!" });
       }
-      res
-        .status(200)
-        .send({
-          message: "Email enviado com sucesso!",
-          message_id: info.messageId,
-        });
+      return response.status(200).json({message: "Email enviado com sucesso"})
     });
   }
 };
