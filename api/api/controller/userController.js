@@ -1,4 +1,3 @@
-const db = require("../db");
 const User = require('../entity/user')
 
 module.exports = class userController {

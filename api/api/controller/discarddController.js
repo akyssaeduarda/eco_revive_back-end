@@ -1,4 +1,3 @@
-const db = require("../db");
 const Discardd = require('../entity/discardd')
 const jwt = require("jsonwebtoken")
 

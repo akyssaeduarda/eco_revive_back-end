@@ -1,4 +1,3 @@
-const db = require("../db");
 const Company = require('../entity/company')
 
 module.exports = class companyController {
@@ -25,6 +24,11 @@ module.exports = class companyController {
       console.log(error)
       return response.status(422).json({ message:"ERRO!!" })
     }
+  }
+
+  static async getCompany(request, response){
+    const company = await Company.findAll({})
+    return response.status(200).json({ message: "sucesso!", company })
   }
 
 };
