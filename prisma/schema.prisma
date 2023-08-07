@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  user_id                  String @id @default(uuid())
+  user_name                String
+  user_email               String @unique
+  user_password            String
+  user_phone               String
+  user_addrress_cep        String
+  user_addrress_road       String
+  user_addrress_number     String
+  user_addrress_district   String
+  user_addrress_city       String
+  user_addrress_state      String
+  user_addrress_complement String
+
+  Discard Discard[]
+}
+
+model Discard {
+  disc_id               String   @id @default(uuid())
+  disc_item             String
+  disc_address          String
+  disc_date             DateTime
+  disc_responsible_name String
+  disc_status           String
+
+  user_id String
+
+  id_user User @relation(fields: [user_id], references: [user_id])
+}
+
+model Company {
+  comp_id                  String @id @default(uuid())
+  comp_name                String
+  comp_cnpj                String
+  comp_cnae                String
+  comp_email               String
+  comp_password            String
+  comp_phone               String
+  comp_type                String
+  comp_addrress_cep        String
+  comp_addrress_road       String
+  comp_addrress_number     String
+  comp_addrress_district   String
+  comp_addrress_city       String
+  comp_addrress_state      String
+  comp_addrress_complement String
+}
