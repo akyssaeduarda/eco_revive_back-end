@@ -9,5 +9,5 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(userRoutes);
 app.listen(8081, () => {
-  console.log("teste2");
+  console.log("running");
 }); //porta
