@@ -14,7 +14,6 @@ O projeto é baseado em ReactJS no [Front-end](https://github.com/dEgito/EcoRevi
 
 - Node
 - Prisma
-- Prettier
 
 ---
 
